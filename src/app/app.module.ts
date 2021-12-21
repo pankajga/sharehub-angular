@@ -21,6 +21,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Configproperty } from './config/configproperty';
 import { NavService } from './service/nav.service';
 import {MatDividerModule} from '@angular/material/divider';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatDividerModule} from '@angular/material/divider';
     HeaderComponent,
     HomeComponent,
     StocksComponent,
-    MutualfundsComponent
+    MutualfundsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

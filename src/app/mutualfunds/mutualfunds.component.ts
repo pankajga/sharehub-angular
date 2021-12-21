@@ -10,7 +10,7 @@ import { NavService } from '../service/nav.service';
 export class MutualfundsComponent implements OnInit {
 
   constructor(private nav: NavService) {
-    console.log(JSON.parse(sessionStorage.getItem('mfData')!));
+    //console.log(JSON.parse(sessionStorage.getItem('mfData')!));
   }
 
   ngOnInit(): void {
