@@ -1,0 +1,26 @@
+
+
+
+<div class="container">
+    <div class="card-deck row">
+        <div class="col-xs-12 col-sm-6 col-md-3 h-75" *ngFor="let x of data">
+            <div class="card mat-elevation-z8">
+                <div class="view overlay zoom w-50 h-50 rounded mx-auto d-block pt-2">
+                    <img class="card-img-top" [src]="x.mfLogo" alt="Card image cap">
+                </div>
+                <hr>
+                <div class="card-body">
+                    <p>{{x.mfName}}</p>
+                    <p>{{x.mfTagLine}}</p>
+                    <p>Return: {{x.mfReturns}}</p>
+                    <p>Year: {{x.mfYearPlan}}</p>
+                    <p>{{x.mfEquity}}</p>
+                    <hr>
+                    <div class="col text-center">
+                        <button mat-raised-button color="warn" class="mb-2">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
