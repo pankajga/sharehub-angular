@@ -30,10 +30,10 @@ export class NavService {
     characterDirection: ""
   }
 
-  getMutualFunds(){
+  async getMutualFunds(){
     console.log("in 32: "+this.config.mutualFundsUrl);
     this.getQuotes();
-    this.http.get<ShareHub>("http://localhost:8080/getMutualFunds")
+    await this.http.get<ShareHub>("http://localhost:8080/getMutualFunds")
       .toPromise()
       .then(data => {
         this.share = data!;

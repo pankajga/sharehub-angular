@@ -22,6 +22,7 @@ import { Configproperty } from './config/configproperty';
 import { NavService } from './service/nav.service';
 import {MatDividerModule} from '@angular/material/divider';
 import { AboutComponent } from './about/about.component';
+import { async } from 'rxjs';
 
 @NgModule({
   declarations: [
