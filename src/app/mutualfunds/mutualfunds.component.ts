@@ -11,9 +11,11 @@ export class MutualfundsComponent implements OnInit {
 
   constructor(private nav: NavService) {
     //console.log(JSON.parse(sessionStorage.getItem('mfData')!));
+    showData: Boolean;
   }
 
   ngOnInit(): void {
+    console.log(JSON.parse(sessionStorage.getItem('mfData')!));
   }
 
   userData: { id: number, name: string }[] = [

@@ -23,6 +23,7 @@ import { NavService } from './service/nav.service';
 import {MatDividerModule} from '@angular/material/divider';
 import { AboutComponent } from './about/about.component';
 import { async } from 'rxjs';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { async } from 'rxjs';
     HomeComponent,
     StocksComponent,
     MutualfundsComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -59,12 +61,6 @@ import { async } from 'rxjs';
       multi: true,
       deps: [PropertyloaderService],
       useFactory: propInitlzr
-    },
-    {
-      provide: APP_INITIALIZER,
-      multi: true,
-      deps: [NavService],
-      useFactory: mfData
     }
   ],
   bootstrap: [AppComponent]
@@ -76,11 +72,5 @@ export class AppModule { }
 export function propInitlzr(loadService: PropertyloaderService){
   return () => {
     return loadService.load();
-  };
-}
-
-export function mfData(nav: NavService){
-  return () => {
-    return nav.getMutualFunds();
   };
 }

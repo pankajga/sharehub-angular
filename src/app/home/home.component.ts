@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ShareHub } from '../modal/share-hub';
+import { NavService } from '../service/nav.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  share: ShareHub[] = [{
+    mfName: "",
+    mfTagLine: "",
+    mfReturns: "",
+    mfYearPlan: "",
+    mfEquity: "",
+    mfLogo: ""
+  }]
+
+
+  constructor(private nav: NavService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(
+      'Activated route data in Component:::',
+      this.activatedRoute.data
+    );
+    this.activatedRoute.data.subscribe((response: any) => {
+      console.log('PRODUCT FETCHING', response);
+      this.share = response.data;
+      sessionStorage.setItem('mfData',JSON.stringify(this.share));
+      console.log(this.share);
+      console.log(JSON.parse(sessionStorage.getItem('mfData')!));
+    });
   }
 
 }
