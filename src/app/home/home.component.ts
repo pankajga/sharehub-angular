@@ -23,16 +23,19 @@ export class HomeComponent implements OnInit {
   constructor(private nav: NavService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(
-      'Activated route data in Component:::',
-      this.activatedRoute.data
-    );
+    //console.log(
+      //'Activated route data in Component:::',
+      //this.activatedRoute.data
+    //);
     this.activatedRoute.data.subscribe((response: any) => {
       console.log('PRODUCT FETCHING', response);
       this.share = response.data;
-      sessionStorage.setItem('mfData',JSON.stringify(this.share));
+      if (typeof this.share !== 'undefined') {
+        sessionStorage.setItem('mfData',JSON.stringify(this.share));
+      }
+      //sessionStorage.setItem('mfData',JSON.stringify(this.share));
       console.log(this.share);
-      console.log(JSON.parse(sessionStorage.getItem('mfData')!));
+      //console.log(JSON.parse(sessionStorage.getItem('mfData')!));
     });
   }
 

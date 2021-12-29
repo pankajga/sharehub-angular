@@ -24,6 +24,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import { AboutComponent } from './about/about.component';
 import { async } from 'rxjs';
 import { LoginComponent } from './login/login.component';
+import { DataResolverService } from './data-resolver.service';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { LoginComponent } from './login/login.component';
       multi: true,
       deps: [PropertyloaderService],
       useFactory: propInitlzr
-    }
+    },
+    NavService,
+    HttpClient,HttpClientModule,DataResolverService,Router
   ],
   bootstrap: [AppComponent]
 })

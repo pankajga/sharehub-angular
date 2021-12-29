@@ -10,7 +10,7 @@ import { NavService } from './service/nav.service';
 })
 export class AppComponent {
   title = 'sharehub';
-  constructor(private config: Configproperty){
-    console.log("in app: "+config.mutualFundsUrl);
+  constructor(){
+    //console.log("in app: "+config.mutualFundsUrl);
   }
 }

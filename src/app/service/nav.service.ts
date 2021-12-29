@@ -13,8 +13,8 @@ import { Cookie } from 'ng2-cookies';
 })
 export class NavService {
 
-  constructor(private config: Configproperty, private http: HttpClient, private urlLoad: PropertyloaderService) {
-    console.log("in 14: "+this.config.mutualFundsUrl);
+  constructor(private http: HttpClient) {
+    //console.log("in 14: "+this.config.mutualFundsUrl);
   }
 
   public clientId = 'spa-sharehub';

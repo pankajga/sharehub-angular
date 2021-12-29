@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NavService } from '../service/nav.service';
 
 import { MutualfundsComponent } from './mutualfunds.component';
 
@@ -8,7 +10,9 @@ describe('MutualfundsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MutualfundsComponent ]
+      imports: [HttpClientModule],
+      declarations: [ MutualfundsComponent ],
+      providers: [NavService]
     })
     .compileComponents();
   });

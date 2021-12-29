@@ -10,7 +10,7 @@ import { Quotes } from '../modal/quote';
 export class AboutComponent implements OnInit {
 
   constructor() { 
-    console.log("abbbb: "+JSON.parse(sessionStorage.getItem('quotes')!));
+    //console.log("abbbb: "+JSON.parse(sessionStorage.getItem('quotes')!));
   }
 
   ngOnInit(): void {
