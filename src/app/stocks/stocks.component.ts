@@ -6,12 +6,10 @@ import { NavService } from '../service/nav.service';
   templateUrl: './stocks.component.html',
   styleUrls: ['./stocks.component.css']
 })
-export class StocksComponent implements OnInit {
+export class StocksComponent {
 
-  constructor(private nav: NavService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-  }
 
  
 

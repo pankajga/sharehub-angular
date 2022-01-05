@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   public isLoggedIn = false;
 
-  constructor(private nav: NavService, private route: Router) {
+  constructor(private nav: NavService) {
    }
 
   ngOnInit(): void {

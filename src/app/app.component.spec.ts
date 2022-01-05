@@ -10,40 +10,16 @@ import { MutualfundsComponent } from './mutualfunds/mutualfunds.component';
 import { StocksComponent } from './stocks/stocks.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        MatToolbarModule,
-        MatIconModule
-      ],
-      declarations: [
-        AppComponent,
-        HeaderComponent,
-        HomeComponent,
-        AboutComponent,
-        MutualfundsComponent,
-        StocksComponent
-      ],
-    }).compileComponents();
+  let fixture: AppComponent;
+
+  beforeEach(() => {
+    fixture = new AppComponent();
   });
 
-   it('should create the app', () => {
-     const fixture = TestBed.createComponent(AppComponent);
-     const app = fixture.componentInstance;
-     expect(app).toBeTruthy();
-   });
-
-   it(`should have as title 'sharehub'`, () => {
-     const fixture = TestBed.createComponent(AppComponent);
-     const app = fixture.componentInstance;
-     expect(app.title).toEqual('sharehub');
-   });
-
-  /*it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('sharehub app is running!');
-  });*/
-//});
+  describe('Setup Component', () => {
+    it('should be initialised', () => {
+      expect(fixture).toBeTruthy();
+      expect(fixture.title).toEqual('sharehub');
+    })
+  })
+});

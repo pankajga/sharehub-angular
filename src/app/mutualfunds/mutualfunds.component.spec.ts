@@ -4,26 +4,26 @@ import { NavService } from '../service/nav.service';
 
 import { MutualfundsComponent } from './mutualfunds.component';
 
-describe('MutualfundsComponent', () => {
-  let component: MutualfundsComponent;
-  let fixture: ComponentFixture<MutualfundsComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-      declarations: [ MutualfundsComponent ],
-      providers: [NavService]
-    })
-    .compileComponents();
-  });
+describe('MutualFundComponent', () => {
+  let fixture: MutualfundsComponent;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MutualfundsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture = new MutualfundsComponent();
+    sessionStorage.clear();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  describe('Setup Component', () => {
+    it('should be initialised', () => {
+      expect(fixture).toBeTruthy();
+    });
+    it('should get user info from session storage', () => {
+      const sessionData = JSON.parse(sessionStorage.getItem('mfData')!);
+      expect(sessionData).toBeDefined;
+    });
+  
+    it('should get empty object if no user info in session storage', () => {
+      const sessionData = JSON.parse(sessionStorage.getItem('mfData')!);
+      expect(sessionData).toBeNull;
+    });
+  })
 });

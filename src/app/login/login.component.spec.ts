@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -7,25 +7,21 @@ import { NavService } from '../service/nav.service';
 import { LoginComponent } from './login.component';
 
 describe('LoginComponent', () => {
-  let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HttpClientModule, RouterTestingModule],
-      declarations: [ LoginComponent ],
-      providers: [NavService]
-    })
-    .compileComponents();
-  });
+  let fixture: LoginComponent;
+  let service: NavService;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule],
+      providers: [NavService]
+    });
+    service = TestBed.inject(NavService);
+    fixture = new LoginComponent(service);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  describe('Setup Component', () => {
+    it('should be initialised', () => {
+      expect(fixture).toBeTruthy();
+    })
+  })
 });

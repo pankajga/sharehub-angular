@@ -4,26 +4,16 @@ import { NavService } from '../service/nav.service';
 
 import { StocksComponent } from './stocks.component';
 
-describe('StocksComponent', () => {
-  let component: StocksComponent;
-  let fixture: ComponentFixture<StocksComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-      declarations: [ StocksComponent ],
-      providers: [NavService]
-    })
-    .compileComponents();
-  });
+describe('AppComponent', () => {
+  let fixture: StocksComponent;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StocksComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture = new StocksComponent();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  describe('Setup Component', () => {
+    it('should be initialised', () => {
+      expect(fixture).toBeTruthy();
+    })
+  })
 });
